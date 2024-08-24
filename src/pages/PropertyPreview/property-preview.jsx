@@ -21,7 +21,7 @@ export default function PreopertyPreview(){
 
     React.useEffect(() => {
         const getData = async () =>{
-            const res = await axios.get(`https://dylanestate.onrender.com/api/v1/list-property-form/${propertyID}`)
+            const res = await axios.get(`https://realestate-b6hy.onrender.com/api/v1/list-property-form/${propertyID}`)
             setData(res.data.property[0])
         }
         getData()
