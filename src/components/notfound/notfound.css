@@ -1,0 +1,29 @@
+.not-found-cn{
+    height: calc(100vh - 84px);
+    width: 100%;
+    background-color: #122B49;
+}
+
+.not-found{
+    padding-top: 70px;
+    padding-left: 150px;
+}
+
+.nf-txt{
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    width: 800px;
+    color: #FFFFFF;
+}
+
+.not-found button{
+    font-size: 25px;
+    padding: 10px 30px;
+    border-radius: 16px;
+    color: #122B49;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    margin-top: 40px;
+}

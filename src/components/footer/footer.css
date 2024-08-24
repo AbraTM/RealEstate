@@ -1,0 +1,90 @@
+.footer{
+    width: 100%;
+    height: 422px;
+    background-color: #122B49;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+}
+
+.footer-content{
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 10%;
+}
+
+.footer-top{
+    margin-top: 40px;
+    height: 270px;
+    border-bottom: 1px solid #FFFFFF;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+}
+
+.footer-logo{
+    width: 150px;
+}
+
+.footer-mid{
+    width: 570px;
+}
+
+.footer-mid ul{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    row-gap: 30px;
+    list-style: none;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    padding: 0px;
+}
+
+.footer-right h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-right p {
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 230px;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.footer-bottom p{
+    max-width: 565px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-bottom div{
+    display: flex;
+    margin-right: 10px;
+}
+
+.footer-bottom img{
+    margin-right: 7px;
+    height: 22px;
+}
+
+.bold-underline{
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer-bottom span{
+    margin-right: 7px;
+}

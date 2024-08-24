@@ -1,0 +1,68 @@
+.property-images-cn{
+    height: fit-content;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 80px;
+}
+
+.pi-form{
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.pi-form h1{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.pi-form p{
+    font-weight: 500;
+}
+
+.photo-upload-cn{
+    width: 100%;
+    height: 310px;
+    border: 1px solid #D6D6D6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2px;
+}
+
+.upload-btn-cn{
+    width: 176px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upload-btn input{
+    display: none;
+}
+
+.upload-btn label{
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #122B49;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 8px;
+}
+
+.uploaded-image{
+    width: 500px;
+    height: 95%;
+    border-radius: 8px
+}

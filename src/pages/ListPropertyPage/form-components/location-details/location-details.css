@@ -1,0 +1,20 @@
+.location-details-cn{
+    padding-top: 50px;
+    padding-left: 60px;
+    padding-bottom: 100px;
+    display: grid;
+    row-gap: 70px;
+}
+
+
+
+/* Map Container */
+.leaflet-container{
+    height: 380px;
+    width: 820px;
+}
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
+}
+

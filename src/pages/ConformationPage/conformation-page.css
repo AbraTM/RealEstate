@@ -1,0 +1,47 @@
+.conformation-page{
+    width: 100%;
+    height: calc(100vh - 84px);
+}
+
+.conformation-page-content{
+    font-family: "Inter", sans-serif;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+
+.conformation-page-content h1{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 30px;
+}
+
+.conformation-page-content p{
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.conformation-page-content h3{
+    font-family: "Jacques Francois", serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.conformation-page-btns{
+    display: flex;
+    gap: 50px;
+    padding-top: 40px;
+}
+
+.conformation-page-btns button{
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #122B49;
+    border-radius: 8px;
+    padding: 10px 40px;
+
+    border: none;
+    outline: none;
+}

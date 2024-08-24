@@ -1,0 +1,145 @@
+.property-details{
+    /* width : 980px */
+    height: fit-content;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 80px;
+}
+
+.property-details-form{
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+
+.property-details-form h1{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.grid-temp{
+    display: grid;
+    grid-template-columns: 380px 380px;
+    gap: 60px;
+}
+
+.floor-grid{
+    display: grid;
+    grid-template-columns: 170px 170px;
+    gap: 40px;
+}
+
+.select-loc{
+    text-indent: 20px;
+}
+
+.placeholder-space{
+    word-spacing: 300px;
+}
+
+.text-area{
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    margin-top: 15px;
+    font-family: "Inter", sans-serif;
+    opacity: 0.5;
+    padding: 10px 15px;
+}
+
+
+/* Custom Radio */
+.custom-radio-cn-A{
+    margin-top: 20px;
+}
+
+input[type="radio"].custom-radio-A{
+    display: none;
+}
+
+.option-cn-A{
+    display: flex;
+    gap: 30px;
+}
+
+.custom-radio-label-A{
+    display: inline-block;
+    border: 1px solid #D6D6D6;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 14px;
+    transition: 200ms ease-in-out;
+}
+
+input[type="radio"].custom-radio-A:checked + .custom-radio-label-A{
+    background-color: blue;
+    border: none;
+    color: #FFFFFF;
+}
+
+.ptype-dropdown{
+    margin-top: 20px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 190px 190px 190px;
+    gap: 0px;
+}
+
+/* Shared CSS across homepageform and property-details-form */
+.radio-btns-cn{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    margin-top: 25px;
+}
+
+.radio-btn-cn{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.radio-btn-cn input{
+    scale: 1.8;
+}
+
+.radio-btn-cn label{
+    font-size: 18;
+}
+
+.info-cn{
+    display: grid;
+    row-gap: 6px;
+}
+
+.info-cn div{
+    display: flex;
+    gap: 20px;
+}
+
+.info-label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.info-input{
+    height: 40px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #7A7A7A;
+    box-shadow: 0px 0px 2px 0px #7A7A7A inset;
+    text-indent: 20px;
+}
+
+.info-input::placeholder{
+    opacity: 0.5;
+}
+
+.info-select{
+    height: 44px;
+    border-radius: 2px;
+    border: 1px solid #7A7A7A;
+    box-shadow: 0px 0px 2px 0px #7A7A7A inset;
+}
+

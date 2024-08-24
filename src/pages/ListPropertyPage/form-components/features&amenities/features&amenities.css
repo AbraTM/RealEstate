@@ -1,0 +1,52 @@
+.f-a{
+    height: fit-content;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 80px;
+}
+
+.f-a-form{
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.f-a h1{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.division-line{
+    width: 100%;
+    background-color: #D6D6D6;
+    height: 2px;
+    margin: 20px 0px;
+}
+
+
+/* Custom Checkbox */
+.custom-checkbox-cn-C{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 135px;
+    height: 138px;
+}
+
+input[type="checkbox"].custom-checkbox-C{
+    width: 20px;
+    height: 20px;
+}
+
+.option-cn-C{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 40px;
+    row-gap: 50px;
+    margin-top: 20px;
+}
+
+

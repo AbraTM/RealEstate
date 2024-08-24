@@ -1,0 +1,260 @@
+.property-preview{
+    font-family: "Merriweather Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.bot-shadow{
+    width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.desc-half{
+    width: 835px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.desc-top-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.desc-heading{
+    font-size: 26px;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0;    
+}
+
+.desc-header-l2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.desc-header-l2-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.desc-header-l2-btns img{
+    margin-right: 15px;
+}
+
+.img-section{
+    width: 100%;
+    height: 405px;
+    background-color: #C4C4C4;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0px 0px 10px 4px #C4C4C4;
+}
+
+.img-area{
+    width: 100%;
+    height: 376px;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+}
+
+.img-area-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.left-arrow, .right-arrow{
+    height: 48px;
+    position: absolute;
+    top: 45%
+}
+
+.left-arrow {
+   left: 0;
+}
+
+.right-arrow{
+    right: 0;
+}
+
+.add-photos-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border-radius: 8px;
+    background-color: #122B49;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 10px;
+
+    border: none;
+    outline: none;
+}
+
+.img-sec-bottom-padding{
+    width: 100%;
+    height: 29px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D6D6D6;
+}
+
+.p-id{
+    color: #7A7A7A;
+    padding-left: 20px;
+}
+
+.reject-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #FFFFFF 80%;
+    height: 29px;
+    padding-inline: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #424242;
+
+    border: none;
+    outline: none;
+    transition: 100ms ease-in-out;
+}
+
+.reject-btn:hover{
+    font-size: 15px;
+    height: 32px;
+    box-shadow: 0px 0px 10px 4px #C4C4C4;
+}
+
+/* Property Overview Section */
+
+.property-overview-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.property-overview-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.property-overview-heading{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.property-overview-society{
+    color: #7A7A7A;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 40px;
+}
+
+.property-overview-listing{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 90px;
+    column-gap: 60px;
+    padding-left: 20px;
+}
+
+.po-element{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.po-element-data{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    color : #122B49;
+}
+
+.po-element-name{
+    color: #7A7A7A;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 27px;
+}
+
+/* Amenities Section */
+.amenities-section h1{
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.amenities-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 90px;
+    column-gap: 60px;
+    padding-left: 20px;
+}
+
+/* Property Description Section */
+.pd-section p{
+    font-family: "Inter", sans-serif;
+    max-width: 750px;
+    color: #424242;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.pd-header{
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+
+/* Right Half */
+.right-half{
+    width: 425px;
+    height: 650px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-half-top{
+    width: 100%;
+    background-color: #F6EFE6;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+}
+
+.right-half-top h1{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.right-half-top h3{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}

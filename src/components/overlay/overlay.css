@@ -1,0 +1,70 @@
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.715);
+}
+
+.overlay-content, .overlay-content-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 469px;
+    height: 252px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 2px gray;
+}
+
+.overlay h1{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.overlay-btn{
+    font-family: "Merriweather Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-btn button, .overlay-content-error button{
+    background-color: #122B49;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 380px;
+    height: 33px;
+
+    margin-bottom: 18px;
+    border: none;
+    outline: none;
+}
+
+.overlay-btn{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.overlay-btn span{
+    text-decoration: underline;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.overlay-content-error h1{
+    font-size: 24px;
+    color: red;
+}
