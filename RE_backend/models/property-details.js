@@ -127,7 +127,7 @@ const propertyDetailSchema = new mongoose.Schema({
         enum : ["Municipal Corporation (BMC)", "Borewell", "Both"]
     },
     Society_Amenities : {
-        type : [String],
+        type : String,
     }, 
     Rent : {
         type : Number,
@@ -139,9 +139,13 @@ const propertyDetailSchema = new mongoose.Schema({
     },
     Price_Detail_Description : {
         type : String,
-    }, 
+    },
+    Cover_Image : {
+        type : String,
+        required : [true, "Please provide a cover image"]
+    },
     Images : {
-        type: String
+        type: [String]
     }
 })
 

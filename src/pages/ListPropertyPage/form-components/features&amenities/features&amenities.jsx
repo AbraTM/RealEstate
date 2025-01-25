@@ -40,13 +40,14 @@ export default function FeaturesAndAmeneties({formData, handleChange, getAmeniti
     // const safetyElements = createOptions(safety)
 
     //Society Amenities
-    const [amenitiesList, setAmenitiesList] = React.useState([])
-    const newHandleChange = (event, data) => {
-        handleChange(event)
+    const [amenitiesList, setAmenitiesList] = React.useState("")
+    const newHandleChange = (data) => {
         setAmenitiesList(prev => {
-            let tempList = prev
-            tempList.push(data)
-            return tempList
+            if(prev === ""){
+                return data
+            }else{
+                return prev + "," + data
+            }
         })
         getAmenities(amenitiesList)
     }
@@ -56,7 +57,7 @@ export default function FeaturesAndAmeneties({formData, handleChange, getAmeniti
         return(
             <div className="custom-checkbox-cn-C" key={index}>
                 <img src={`/amenities/${item.url}`} className="custom-checkbox-label-C"/>
-                <input type="checkbox" className="custom-checkbox-input-C" value={item.name} name="Society_Amenities" onChange={event => newHandleChange(event, passData)}/>
+                <input type="checkbox" className="custom-checkbox-input-C" value={item.name} name="Society_Amenities" onChange={() => newHandleChange(passData)}/>
             </div>
         )
     })

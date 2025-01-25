@@ -1,0 +1,55 @@
+.property-card{
+    width: 20rem;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.p-card-image{
+    width: 100%;
+    max-height: 200px;
+    aspect-ratio: 16/12;
+    border-radius: 4px;
+}
+
+.white-box{
+    background-color: white;
+    border-radius: 4px;
+    padding: 1rem 1.4rem;
+    max-width: 56%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.26);
+    font-size: 0.9rem;
+
+    position: absolute;
+    z-index: 10;
+    bottom: -40px;
+    right: 10px;
+    min-width: 14rem;
+}
+
+.white-box > :first-child{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+
+.p-grid-cn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.p-grid{
+    display: grid;
+    justify-content: center;
+    align-items: baseline;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 6rem;
+    row-gap: 8rem;
+}
+
+.p-grid a{
+    text-decoration: none;
+    color: black;
+}

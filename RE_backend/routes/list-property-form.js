@@ -1,8 +1,21 @@
 const express = require("express")
 const router = express.Router()
 const { createPropertyDetails, getPropertyPreview } = require("../controllers/lpf-controller")
+const upload = require('../middlware/multer')
 
-router.post('/', createPropertyDetails)
+router.post('/', 
+    upload.fields([
+        {
+            name: "Cover_Image",
+            maxCount: 1
+        },
+        {
+            name : "Images",
+            maxCount: 5
+        }
+    ]), 
+    createPropertyDetails
+)
 router.get('/:id', getPropertyPreview)
 
 module.exports = router

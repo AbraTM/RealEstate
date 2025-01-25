@@ -1,33 +1,30 @@
 import React from "react";
-import "./property-preview.css"
-import { useLocation } from "react-router-dom";
-import MarkerSVG from "./assets/marker.svg"
-import HeartSVG from "./assets/heart.svg"
-import DownloadSVG from "./assets/download.svg"
-import CameraSVG from "./assets/camera.svg"
-import PlusSVG from "./assets/plus.svg"
-import LeftArrow from "./assets/left-arrow.svg"
-import RightArrow from "./assets/right-arrow.svg"
-import CrossSVG from "./assets/cross.svg"
+import "./property.css"
+import { useParams } from "react-router-dom";
+import MarkerSVG from "../PropertyPreview/assets/marker.svg"
+import HeartSVG from "../PropertyPreview/assets/heart.svg"
+import DownloadSVG from "../PropertyPreview/assets/download.svg"
+import CameraSVG from "../PropertyPreview/assets/camera.svg"
+import PlusSVG from "../PropertyPreview/assets/plus.svg"
+import LeftArrow from "../PropertyPreview/assets/left-arrow.svg"
+import RightArrow from "../PropertyPreview/assets/right-arrow.svg"
+import CrossSVG from "../PropertyPreview/assets/cross.svg"
 import axios from "axios";
 import Footer from "../../components/footer/footer";
-import RightHalfBottom from "./assets/right-half-bottom.svg"
+import RightHalfBottom from "../PropertyPreview/assets/right-half-bottom.svg"
 import Loading from "../../components/loading/loading";
 
-export default function PreopertyPreview(){
-    const loc = useLocation()
-    const propertyID = loc.state
-
-    const [currImageIndex, changeCurrImageIndex] = React.useState(0)
+export default function Property(){
     const [data, setData] = React.useState()
-
+    const [currImageIndex, changeCurrImageIndex] = React.useState(0)
+    let { id } = useParams()
     React.useEffect(() => {
         const getData = async () =>{
-            const res = await axios.get(`http://localhost:5000/api/v1/list-property-form/${propertyID}`)
+            const res = await axios.get(`http://localhost:5000/api/v1/list-property-form/${id}`)
             setData(res.data.propertyData[0])
         }
         getData()
-    }, [propertyID])
+    }, [id])
 
     if(!data){
         return <Loading />
@@ -135,20 +132,13 @@ export default function PreopertyPreview(){
             </div>
         )
     })
-
-    // const amenitiesElements = data?.Society_Amenities.map((item, index) => {
-    //     return(
-    //         <img src={`/amenities/${item}.svg`} key={index}></img>
-    //     )
-    // })
-
     const amenitiesArray = data?.Society_Amenities ? data?.Society_Amenities.split(",") : []
     const amenitiesElements = amenitiesArray.map((item, index) => {
         return(
             <img src={`/amenities/${item}.svg`} key={index}></img>
         )
     })
-    
+
     const splitStringIntoParagraphs = (text, maxLength) => {
         const paragraphs = []
         // for(let i=0; i<text.length; i += maxLength){
@@ -170,9 +160,9 @@ export default function PreopertyPreview(){
     }
 
     const paragraphs = data?.Property_Description ? splitStringIntoParagraphs(data.Property_Description, 250) : []
-    const paraElemets = paragraphs.map((para) => {
+    const paraElemets = paragraphs.map((para, index) => {
         return (
-            <p>{para}</p>
+            <p key={index}>{para}</p>
         )
     })
 

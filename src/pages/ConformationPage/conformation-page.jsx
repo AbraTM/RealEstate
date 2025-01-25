@@ -14,7 +14,7 @@ export default function ConformationPage(){
                 <p style={{width: "900px"}}>We will now manage your listing and get in touch with you after finding the best suitable tenant as per your preference. </p>
                 <h3>-Dylan Estates</h3>
                 <div className="conformation-page-btns">
-                    <button className="edit-property-btn">Edit Property Listing</button>
+                    {/* <button className="edit-property-btn">Edit Property Listing</button> */}
                     <button className="preview-property-btn" onClick={() => navigate("/property-preview", {state : propertyID , replace : true})}>Preview Property Listing</button>
                 </div>
             </div>

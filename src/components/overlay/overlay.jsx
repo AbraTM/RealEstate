@@ -7,16 +7,29 @@ export default function Overlay(props){
     const [buttonText, setButtonText] = React.useState("Continue")
     const [errorMessage, setErrorMessage] = React.useState("")
     const navigate = useNavigate()
-    console.log(props.data)
+    const formData = props.data
+    console.log(formData)
     const postData = async() => {
         try {
+            const form = new FormData();
+            Object.keys(formData).forEach(key => {
+                if(key === "Cover_Image" && formData.Cover_Image){
+                    form.append(key, formData.Cover_Image[0])
+                }else if(key === "Images" && formData.Images.length > 0){
+                    Array.from(formData.Images).forEach((file) => {
+                        form.append(key, file)
+                    })
+                }else if(formData[key]){
+                    form.append(key, formData[key])
+                }
+            })
             setButtonText("Saving...")
-            const {data} = await axios.post('https://realestate-b6hy.onrender.com/api/v1/list-property-form', props.data, {
+            const response = await axios.post("http://localhost:5000/api/v1/list-property-form", form, {
                 headers: {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'multipart/form-data'
                 }
               })
-            navigate("conformation-page", {state : data})
+            navigate("conformation-page", {state : response.data})
         } catch (error) {
             setErrorMessage("Invalid Information Provided")
         }

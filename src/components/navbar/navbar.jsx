@@ -24,7 +24,7 @@ export default function NavBar(){
                 navType != "/property-preview" ?
                 <nav className="nav-options">
                     <NavLink to={"/properties"} style={({isActive}) => isActive ? activeStyles : null }>PROPERTIES</NavLink>
-                    <NavLink to={"/dashboard"} style={({isActive}) => isActive ? activeStyles : null }>MY DASHBOARD/ACTIVITY</NavLink>
+                    {/* <NavLink to={"/dashboard"} style={({isActive}) => isActive ? activeStyles : null }>MY DASHBOARD/ACTIVITY</NavLink> */}
                     <NavLink to={"/list-property"} style={({isActive}) => isActive ? activeStyles : null }>LIST YOUR PROPERTY</NavLink>
                     <NavLink to={"/contact-us"} style={({isActive}) => isActive ? activeStyles : null }>CONTACT US</NavLink>
                     <div className="nav-divider-line"></div>
@@ -33,11 +33,11 @@ export default function NavBar(){
                 </nav>
                 :
                 <nav className="nav-options">
-                    <NavLink to={"/all-properties"}>ALL PROPERTIES</NavLink>
-                    <NavLink to={"/wishlist"}>WISHLIST</NavLink>
-                    <NavLink to={"/saved-search"}>SAVED SEARCH</NavLink>
+                    <NavLink to={"/properties"}>ALL PROPERTIES</NavLink>
+                    {/* <NavLink to={"/wishlist"}>WISHLIST</NavLink>
+                    <NavLink to={"/saved-search"}>SAVED SEARCH</NavLink> */}
                     <NavLink to={"/list-your-property"}>LIST YOUR PROPERTY</NavLink>
-                    <NavLink to={"/more"}>MORE</NavLink>
+                    {/* <NavLink to={"/more"}>MORE</NavLink> */}
                     <div className="nav-divider-line"></div>
                     <img src={LanguageSVG}></img>
                     <img src={ProfileSVG}></img>

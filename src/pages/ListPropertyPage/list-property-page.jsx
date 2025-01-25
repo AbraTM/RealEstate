@@ -40,9 +40,11 @@ export default function ListPropertyPage(){
             Rent : "",
             Security : "",
             Price_Detail_Description : "", //Price Details end here
-            Images : ""
+            Cover_Image: null,
+            Images : []
     })
 
+    
     function handleChange(event){
         const {name, value, type, checked, files} = event.target
         setFormData(prevForm => {
@@ -52,6 +54,14 @@ export default function ListPropertyPage(){
             }
         })
     }
+
+    const handleFileChange = (e) => {
+        const { name, files } = e.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: files,  // Store files in state
+        }));
+      };
 
     function getMapLocation(position){
         setFormData(prevForm => {
@@ -71,21 +81,12 @@ export default function ListPropertyPage(){
         })
     }
 
-    // function getPropertyImages(files){
-    //     setFormData(prevForm => {
-    //         return {
-    //             ...prevForm,
-    //             Images : files
-    //         }
-    //     })
-    // }
-
     const {steps, currentStepIndex, step, isFirstStep, isLastStep, back, next} = useMultiStepForm([
         <PropertyDetails {...formData} handleChange={handleChange}/>, 
         <LocationDetails {...formData} handleChange={handleChange} getMapLocation={getMapLocation}/>,
         <FeaturesAndAmeneties {...formData} handleChange={handleChange} getAmenities={getAmenities}/>,
         <PriceDetails {...formData} handleChange={handleChange}/>, 
-        <PropertyImages {...formData} handleChange={handleChange}/>
+        <PropertyImages {...formData} handleFileChange={handleFileChange}/>
     ])
 
     

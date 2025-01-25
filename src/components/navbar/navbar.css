@@ -38,3 +38,9 @@
 .nav-options img{
     width: 24px;
 }
+
+@media (max-width: 800px) {
+    .nav-options{
+        display: none;
+    }
+}

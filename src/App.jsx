@@ -11,6 +11,8 @@ import NotFound from "./components/notfound/notfound"
 import ConformationPage from "./pages/ConformationPage/conformation-page"
 import PreopertyPreview from "./pages/PropertyPreview/property-preview"
 import Verify from "./pages/SellerHomePage/verify/verify"
+import Properties_Page from "./pages/Properties/properties-page"
+import Property from "./pages/Properties/property"
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<NavBar/>}>
@@ -18,6 +20,8 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route index element={<HomePageForm/>}/>
           <Route path="verify" element={<Verify/>}/>
       </Route>
+      <Route path="properties" element={<Properties_Page/>}/>
+      <Route path="properties/:id" element={<Property/>}></Route>
       <Route path="list-property" element={<ListPropertyPage/>}/>
       <Route path="list-property/conformation-page" element={<ConformationPage/>}/>
       <Route path="overlay" element={<Overlay/>}/>

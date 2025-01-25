@@ -31,6 +31,12 @@
     margin-bottom: 25px;
 }
 
+.overlay p {
+    font-size: 10px;
+    font-weight: 300;
+    color: red;
+}
+
 .overlay-btn{
     font-family: "Merriweather Sans", sans-serif;
     display: flex;
