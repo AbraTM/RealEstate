@@ -20,7 +20,7 @@ export default function Property(){
     let { id } = useParams()
     React.useEffect(() => {
         const getData = async () =>{
-            const res = await axios.get(`http://localhost:5000/api/v1/list-property-form/${id}`)
+            const res = await axios.get(`http://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
             setData(res.data.propertyData[0])
         }
         getData()
