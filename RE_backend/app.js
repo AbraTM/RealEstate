@@ -4,13 +4,14 @@ require('express-async-errors')
 const express = require("express")
 const app = express()
 const connectDB = require("./db/connect")
-const cors = require("cors")
-app.use(cors({
-    origin: '*',
+const cors = require('cors');
+const corsOptions = {
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}))
-app.options('*', cors())
+    credentials: true,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 const listPropertyFormRouter = require('./routes/list-property-form')
 const propertiesRouter = require('./routes/properties')
