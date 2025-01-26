@@ -6,7 +6,7 @@ const app = express()
 const connectDB = require("./db/connect")
 const cors = require('cors');
 const corsOptions = {
-    origin: '*',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 app.use(cors(corsOptions));
