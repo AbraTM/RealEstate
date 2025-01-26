@@ -20,8 +20,12 @@ const createPropertyDetails = async(req, res) => {
     }
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
 
+    if(!coverImage || !coverImage.url){
+        throw new BadRequestError(`Cloudinary error`);
+    }
     const imagesArray = req.files.Images || [];
-    const imageURLs = [coverImage.url]
+    const imageURLs = []
+    imageURLs.push(coverImage.url)
     if(imagesArray.length > 0){
         for(const img of imagesArray){
             const imagePath = img.path
