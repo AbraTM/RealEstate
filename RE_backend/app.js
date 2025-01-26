@@ -5,7 +5,7 @@ const express = require("express")
 const app = express()
 const connectDB = require("./db/connect")
 const cors = require("cors")
-app.use(cors())
+app.use(cors({ origin: '*' }))
 
 const listPropertyFormRouter = require('./routes/list-property-form')
 const propertiesRouter = require('./routes/properties')
