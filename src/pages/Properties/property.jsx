@@ -9,7 +9,6 @@ import PlusSVG from "../PropertyPreview/assets/plus.svg"
 import LeftArrow from "../PropertyPreview/assets/left-arrow.svg"
 import RightArrow from "../PropertyPreview/assets/right-arrow.svg"
 import CrossSVG from "../PropertyPreview/assets/cross.svg"
-import axios from "axios";
 import Footer from "../../components/footer/footer";
 import RightHalfBottom from "../PropertyPreview/assets/right-half-bottom.svg"
 import Loading from "../../components/loading/loading";
@@ -20,8 +19,9 @@ export default function Property(){
     let { id } = useParams()
     React.useEffect(() => {
         const getData = async () =>{
-            const res = await axios.get(`http://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
-            setData(res.data.propertyData[0])
+            const data = await fetch(`http://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
+            const res = await data.json()
+            setData(res.propertyData[0])
         }
         getData()
     }, [id])

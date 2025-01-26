@@ -1,6 +1,5 @@
 import React from "react";
 import "./overlay.css"
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Overlay(props){
@@ -24,12 +23,17 @@ export default function Overlay(props){
                 }
             })
             setButtonText("Saving...")
-            const response = await axios.post("http://realestate-b6hy.onrender.com/api/v1/list-property-form", form, {
-                headers: {
-                  'Content-Type': 'multipart/form-data'
-                }
-              })
-            navigate("conformation-page", {state : response.data})
+            // const response = await axios.post("http://realestate-b6hy.onrender.com/api/v1/list-property-form", form, {
+            //     headers: {
+            //       'Content-Type': 'multipart/form-data'
+            //     }
+            //   })
+            const response = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
+                method: 'POST',
+                body: formData,
+            })
+            const res = response.json()
+            navigate("conformation-page", {state : res.data})
         } catch (error) {
             setErrorMessage("Invalid Information Provided")
         }

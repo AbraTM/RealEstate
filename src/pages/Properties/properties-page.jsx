@@ -7,19 +7,10 @@ import Loading from '../../components/loading/loading';
 export default function Properties_Page() {
     const [propertiesData, setPropertiesData] = React.useState([]);
     React.useEffect(() => {
-        const getData = async () => {
-          try {
-            const data = await fetch("http://realestate-b6hy.onrender.com/api/v1/properties", {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            })
-            const res = await data.json()
-            setPropertiesData(res.data)
-          } catch (error) {
-            console.log('Error fetching data: \n', error)
-          }
+        const getData = async() => {
+          const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties")
+          const res = await data.json()
+          setPropertiesData(res.data)
         }
         getData()
     }, [])
