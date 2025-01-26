@@ -5,7 +5,13 @@ const express = require("express")
 const app = express()
 const connectDB = require("./db/connect")
 const cors = require("cors")
-app.use(cors({ origin: '*' }))
+const corsOptions = {
+    origin: 'http://localhost:5173', // Frontend URL (adjust for production)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+    credentials: true, // Allow cookies
+}
+app.use(cors(corsOptions))
 
 const listPropertyFormRouter = require('./routes/list-property-form')
 const propertiesRouter = require('./routes/properties')
