@@ -6,6 +6,7 @@ const { StatusCodes } = require("http-status-codes")
 
 
 const createPropertyDetails = async(req, res) => {
+    console.log(req)
     const requiredFields = [
         "Property_For", "Property_Type", "Built_Up_Area", "Carpet_Area", "Property_Facing", "Property_On_Floor", "Total_Floors", "Property_Age", "BHK_Type", "Bathrooms", "Balcony", "Tenant_Preference", "Availability", "Property_Description", "Building", "Locality", "Non_Veg", "Pets_Allowed", "Electricity", "Water_Supply", "Rent", "Security"
     ]

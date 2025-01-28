@@ -28,6 +28,7 @@ export default function Overlay(props){
                 body: form,
                 mode: 'cors'
             })
+            console.lof(response)
             const res = await response.json()
             navigate("conformation-page", {state : res.data})
         } catch (error) {
