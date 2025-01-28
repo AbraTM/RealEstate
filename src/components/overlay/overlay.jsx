@@ -25,11 +25,8 @@ export default function Overlay(props){
             setButtonText("Saving...")
             const response = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
                 method: 'POST',
-                body: JSON.stringify(form),
-                mode: 'cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                body: form,
+                mode: 'cors'
             })
             console.log(response)
             const res = await response.json()
