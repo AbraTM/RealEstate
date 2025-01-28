@@ -11,7 +11,12 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header']
 };
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.options('*', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.status(204).end();
+});
 
 
 const listPropertyFormRouter = require('./routes/list-property-form')
