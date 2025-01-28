@@ -23,16 +23,12 @@ export default function Overlay(props){
                 }
             })
             setButtonText("Saving...")
-            // const response = await axios.post("http://realestate-b6hy.onrender.com/api/v1/list-property-form", form, {
-            //     headers: {
-            //       'Content-Type': 'multipart/form-data'
-            //     }
-            //   })
             const response = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
                 method: 'POST',
-                body: formData,
+                body: form,
+                mode: 'cors'
             })
-            const res = response.json()
+            const res = await response.json()
             navigate("conformation-page", {state : res.data})
         } catch (error) {
             setErrorMessage("Invalid Information Provided")

@@ -19,7 +19,7 @@ export default function Property(){
     let { id } = useParams()
     React.useEffect(() => {
         const getData = async () =>{
-            const data = await fetch(`http://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
+            const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
             const res = await data.json()
             setData(res.propertyData[0])
         }

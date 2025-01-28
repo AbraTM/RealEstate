@@ -22,7 +22,7 @@ export default function PreopertyPreview(){
 
     React.useEffect(() => {
         const getData = async () =>{
-            const data = await fetch(`http://realestate-b6hy.onrender.com/api/v1/list-property-form/${propertyID}`)
+            const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/list-property-form/${propertyID}`)
             const res = await data.json()
             setData(res.propertyData[0])
         }
