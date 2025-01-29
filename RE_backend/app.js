@@ -6,7 +6,7 @@ const app = express()
 const connectDB = require("./db/connect")
 const cors = require('cors');
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://real-estate-theta-neon.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header'],
     credentials: true,

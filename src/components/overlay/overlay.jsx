@@ -23,7 +23,7 @@ export default function Overlay(props){
                 }
             })
             setButtonText("Saving...")
-            const data = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
+            const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/list-property-form", {
                 method: "POST",
                 body: form,
                 mode: "cors",
