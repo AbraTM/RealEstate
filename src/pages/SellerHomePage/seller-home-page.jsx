@@ -33,7 +33,7 @@ export default function SellerHomePage(){
                     </div>
                     <div className="seller-hp-point">
                         <img src={CheckMark}/>
-                        <div>Add your best<span>Property Shots</span></div>
+                        <div>Add your best <span>Property Shots</span></div>
                     </div>
                 </div>
                 <div className="seller-hp-form">
