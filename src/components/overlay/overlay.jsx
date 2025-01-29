@@ -23,13 +23,13 @@ export default function Overlay(props){
                 }
             })
             setButtonText("Saving...")
-            const response = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
-                method: 'POST',
+            const data = await fetch("http://realestate-b6hy.onrender.com/api/v1/list-property-form", {
+                method: "POST",
                 body: form,
-                mode: 'cors'
+                mode: "cors",
+                credentials: "include"
             })
-            console.log(response)
-            const res = await response.json()
+            const res = await data.json()
             navigate("conformation-page", {state : res.data})
         } catch (error) {
             setErrorMessage("Invalid Information Provided")
