@@ -2,11 +2,19 @@ import React from "react";
 import "./property-images.css"
 import CameraIcon from "./assets/camera.svg"
 import PlusSVG from "./assets/plus.svg"
+import { useRef } from "react";
 
 export default function PropertyImages({formData, handleFileChange }){
     const [coverImage, setCoverImage] = React.useState("")
     const [selected, setSelected] = React.useState("")
-
+    
+    const compRef = useRef(null)
+    React.useEffect(() => {
+        if(compRef.current){
+            compRef.current.scrollIntoView({ behavior: "instant", block: "start"})
+        }
+    }, [])
+    
     const handlePhotoUpload = (event) => {
         if(event.target.id === "Cover_Image"){
             setCoverImage(URL.createObjectURL(event.target.files[0]))
@@ -18,7 +26,7 @@ export default function PropertyImages({formData, handleFileChange }){
         // getPropertyImages(filesList)
     }
      return(
-        <div className="property-images-cn">
+        <div className="property-images-cn" ref={compRef}>
             <div className="pi-form">
                 <h1>Cover Image (Required)</h1>
                 <p>Please upload an image that best represents your property. This will be used as the main image on the listing.</p>

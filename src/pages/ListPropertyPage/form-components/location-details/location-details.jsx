@@ -32,8 +32,15 @@ export default function LocationDetails({formData, handleChange, getMapLocation}
     React.useEffect(() => {
       getMapLocation(position)
     }, [position])
+    const compRef = useRef(null)
+    React.useEffect(() => {
+      if(compRef.current){
+        compRef.current.scrollIntoView({ behavior: "instant", block: "start" });
+      }
+    }, [])
+
     return(
-        <div className="location-details-cn">
+        <div className="location-details-cn" ref={compRef}>
             <div className="grid-temp">
                 <div className="info-cn">
                     <label htmlFor="Building/Society-Name" className="info-label">Building / Society-Name<span style={{color: "red"}}>*</span></label>

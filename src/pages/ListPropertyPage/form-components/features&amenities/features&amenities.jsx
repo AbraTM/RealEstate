@@ -1,6 +1,7 @@
 import React from "react";
 import "./features&amenities.css"
 import { amenities } from "./amenities";
+import { useRef } from "react";
 
 export default function FeaturesAndAmeneties({formData, handleChange, getAmenities}){
     //Removing extra stuff for simplicity
@@ -62,8 +63,16 @@ export default function FeaturesAndAmeneties({formData, handleChange, getAmeniti
         )
     })
 
+    const compRef = useRef(null)
+    React.useEffect(() => {
+        if(compRef.current){
+            compRef.current.scrollIntoView({ behavior: "instant", block: "start"})
+        }
+    }, [])
+
+    
     return(
-        <div className="f-a">
+        <div className="f-a" ref={compRef}>
             <div className="f-a-form">
                 <h1 style={{fontSize: "20px"}}>General feature</h1>
                 <div>

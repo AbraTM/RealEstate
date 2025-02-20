@@ -1,7 +1,15 @@
 import React from "react";
 import "./property-details.css"
+import { useRef } from "react";
 
 export default function PropertyDetails({formData, handleChange}){
+    
+    const compRef = useRef(null)
+    React.useEffect(() => {
+        if(compRef.current){
+            compRef.current.scrollIntoView({ behavior: "instant", block: "start"})
+        }
+    }, [])
 
     const createOptions = (data, name) =>{
         const dataElements = data.map((item, index) => {
@@ -73,7 +81,7 @@ export default function PropertyDetails({formData, handleChange}){
     const availabiltyElements = createOptions(availabilty, "Availability")
 
     return(
-        <div className="property-details">
+        <div className="property-details" ref={compRef}>
             <div className="property-details-form">
                 <div>
                     <h1><span style={{color: "red"}}>*</span>Property for :</h1>

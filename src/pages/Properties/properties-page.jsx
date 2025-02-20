@@ -8,14 +8,20 @@ export default function Properties_Page() {
     const [propertiesData, setPropertiesData] = React.useState([]);
     React.useEffect(() => {
         const getData = async() => {
-          const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties")
+          const data = await fetch("http://localhost:5000/api/v1/properties", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
           const res = await data.json()
           setPropertiesData(res.data)
         }
         getData()
     }, [])
   
-    if(!propertiesData){
+    if(propertiesData.length == 0){
       return <Loading/>
     }
 
@@ -26,8 +32,7 @@ export default function Properties_Page() {
               <img className="p-card-image" src={item?.Cover_Image ?? Default_House}/>
               <div className="white-box">
                 <div>{item.Building}</div>
-                <div>{item.Locality}, {item.City}</div>
-                
+                <div>{item.Locality}, {item.City}</div>  
               </div>
             </div>
         </Link>

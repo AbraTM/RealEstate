@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
 
-    height: 62px;
+    height: 65px;
     background-color: #FCF8F4;
     padding: 10px 60px;
     border-bottom: 1px solid #F6EFE6;
@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
-    padding-top: 25px;
+
 }
 
 .nav-options a{

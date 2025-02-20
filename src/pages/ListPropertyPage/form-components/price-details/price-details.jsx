@@ -1,9 +1,19 @@
 import React from "react";
 import "./price-details.css"
+import { useRef } from "react";
 
 export default function PriceDetails({formData, handleChange}){
+    
+    const compRef = useRef(null)
+        React.useEffect(() => {
+            if(compRef.current){
+                compRef.current.scrollIntoView({ behavior: "instant", block: "start"})
+            }
+        }, [])
+    
+
     return(
-        <div className="price-details-cn">
+        <div className="price-details-cn" ref={compRef}>
             <div className="pd-form">
                 <div className="grid-temp">
                     <div className="info-cn">

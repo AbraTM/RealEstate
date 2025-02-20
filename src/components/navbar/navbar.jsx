@@ -29,7 +29,7 @@ export default function NavBar(){
                     <NavLink to={"/contact-us"} style={({isActive}) => isActive ? activeStyles : null }>CONTACT US</NavLink>
                     <div className="nav-divider-line"></div>
                     <img src={LanguageSVG}></img>
-                    <img src={ProfileSVG}></img>
+                    <Link to={"user-profile"}><img src={ProfileSVG}></img></Link>
                 </nav>
                 :
                 <nav className="nav-options">
@@ -44,7 +44,6 @@ export default function NavBar(){
                 </nav>
             }
         </nav>
-        <Outlet/>
     </div>
     )
 }

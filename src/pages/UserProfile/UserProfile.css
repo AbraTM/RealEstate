@@ -1,0 +1,118 @@
+.profile-page{
+    font-family: "Merriweather Sans";
+}
+
+.pp-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 60px;
+
+}
+
+.pp-top-l{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background-color: rgb(252, 248, 244);
+    padding: 40px 50px;
+    border: 1.5px solid rgba(157, 155, 155, 0.168);
+    border-radius: 10px;
+    width: fit-content;
+    margin-left: 70px;
+}
+
+.pp-top-info h1{
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: rgb(192, 190, 190);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.pp-top-info h2{
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.pp-top h3{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1.5px solid rgba(157, 155, 155, 0.168);
+    background-color: white;
+    padding: 7px 17px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.pp-top b{
+    font-weight: 500;
+    padding-right: 20px;
+    border-right: 1.5px solid rgba(157, 155, 155, 0.168);
+}
+
+.pp-top span{
+    font-weight: 300;
+}
+
+.profile-img{
+    width: 175px;
+}
+
+.pp-top-r{
+    position: relative;
+}
+
+.pp-top-r-button{
+    position: absolute;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    border: 1.5px solid rgba(157, 155, 155, 0.168);
+    border-radius: 10px;
+    background-color: rgb(252, 248, 244);
+    color: rgba(128, 128, 128, 0.652);
+    height: fit-content;
+    width: fit-content;
+}
+
+.pp-top-r-button img{
+    width: 35px;
+}
+
+.pp-properties{
+    margin: 60px 70px;
+    padding-bottom: 200px;
+}
+
+.pp-properties h1{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.ppp-cn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 120px;
+    margin-left: 40px;
+}
+
+.ppp-cn a{
+    color: black;
+}
+
+.no-properties-msg{
+    color: rgba(128, 128, 128, 0.46);
+    font-size: 1.5rem;
+    font-weight: 300;
+}

@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const { createPropertyDetails, getPropertyPreview } = require("../controllers/lpf-controller")
-const upload = require('../middlware/multer')
+const upload = require('../middleware/multer')
 
 router.post('/', 
     upload.fields([

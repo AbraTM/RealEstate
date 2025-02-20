@@ -146,6 +146,11 @@ const propertyDetailSchema = new mongoose.Schema({
     },
     Images : {
         type: [String]
+    }, 
+    userID : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: [true, "UserID is needed"]
     }
 })
 

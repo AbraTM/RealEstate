@@ -1,6 +1,6 @@
 .seller-hp{
     width: 100%;
-    height: calc(100vh - 84px);
+    height: 100vh;
     background-color: #122B49;
     color: #FFFFFF;
     font-family: "Merriweather Sans", sans-serif;
@@ -32,8 +32,8 @@
 .seller-hp-bottom{
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 140px;
+    margin-top: 20px;
 }
 
 .seller-hp-text{
@@ -58,66 +58,11 @@
     font-weight: 800;
 }
 
-/* Bottom Section Form Half */
-.seller-hp-form{
-    width: 610px;
-    height: 380px;
-    border-radius: 16px;
-    background-color: #FCF8F4;
-    overflow: hidden;
-}
-
-.form-top-padding, .form-bottom-padding{
-    height: 68px;
-}
-
-.form-top-padding{
-    color: #122B49;
-    font-weight: 400;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-    padding-left: 70px;
-}
-
-.form-bottom-padding{
-    font-family: "Inter", sans-serif;
-    color: #7A7A7A;
-    font-weight: 400;
-    font-size: 12px;
-
-    display: flex;
-    justify-content: center;
-    gap: 250px;
-    margin-top: 20px
-}
-
-.form-bottom-padding span{
-    color: #000000;
-    font-weight: 500;
-}
-
-.form-bottom-padding a{
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 400;
-    background-color: #122B49;
-    border-radius: 8px;
-
-    display: block;
-    height: 20px;
-    padding: 8px 30px;
-    margin-top: -10px;
-}
-
-.hp-form-cn{
-    height: 244px;
-    overflow-y: scroll;
-    background-color: #FFFFFF
-}
-
-.hp-form{
-    height: fit-content;
+@media (max-width: 800px) {
+    .seller-hp-bottom{
+        flex-direction: column;
+        padding-left: 120px;
+        gap: 70px;
+        padding-bottom: 100px;
+    }
 }

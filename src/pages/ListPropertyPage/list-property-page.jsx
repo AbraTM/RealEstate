@@ -6,10 +6,13 @@ import LocationDetails from "./form-components/location-details/location-details
 import FeaturesAndAmeneties from "./form-components/features&amenities/features&amenities";
 import PriceDetails from "./form-components/price-details/price-details";
 import PropertyImages from "./form-components/property-images/property-images";
-import { useMultiStepForm } from "../../useMultiStepForm"
+import { useMultiStepForm } from "../../../hooks/useMultiStepForm"
 import Overlay from "../../components/overlay/overlay";
+import { useAuth } from "../../../context/AuthContext";
+
 
 export default function ListPropertyPage(){
+    const AuthContext = useAuth()
     const [formData, setFormData] = React.useState({
             Property_For : "",
             Property_Type : "",
@@ -98,6 +101,7 @@ export default function ListPropertyPage(){
         }
         setDisplayOverlay(true)
     }
+
 
     return(
         <div className="list-property-page">
