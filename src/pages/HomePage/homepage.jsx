@@ -13,13 +13,14 @@ export default function Homepage() {
   const [propertiesData, setPropertiesData] = React.useState([])
   React.useEffect(() => {
     const getData = async () => {
-      const data = await fetch("http://localhost:5000/api/v1/properties")
+      const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties")
       const res = await data.json()
+      console.log(res)
       setPropertiesData(res.data)
     }
     getData()
   }, [])
-  const propertyElements = propertiesData.slice(0, 3).map((item, index) => {
+  const propertyElements = propertiesData.length > 0 ? propertiesData.slice(0, 3).map((item, index) => {
     return (
       <Link to={`/properties/${item._id}`} key={index}>
           <div className="property-card">
@@ -31,7 +32,7 @@ export default function Homepage() {
           </div>
       </Link>  
     )
-  }) 
+  }) : null
   return (
     <div className='home'>
       <div className='home-top'>

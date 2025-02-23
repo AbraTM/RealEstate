@@ -13,10 +13,10 @@ const register = async (req, res) => {
     const token = newUser.createJWT()
     res.cookie("access_token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         path: "/",
-        domain: "localhost",
+        domain: process.env.NODE_ENV === "production" ? "https://real-estate-theta-neon.vercel.app/" : "localhost",
         maxAge: 24 * 60 * 60 * 1000 // One Day Equivalent
     }).status(StatusCodes.ACCEPTED).json({msg: "Successfully Registered!!"})
 }
@@ -37,10 +37,10 @@ const login = async(req, res) => {
     const token = existingUser.createJWT()
     res.cookie("access_token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         path: "/",
-        domain: "localhost",
+        domain: process.env.NODE_ENV === "production" ? "https://real-estate-theta-neon.vercel.app/" : "localhost",
         maxAge: 24 * 60 * 60 * 1000 // One Day Equivalent
     }).status(StatusCodes.ACCEPTED).json({msg : "Succesfully Logged In!!"})
 }

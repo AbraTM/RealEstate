@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function HomePageForm(){
     const navigate = useNavigate()
-    const [isVideoLoaded, setIsVideoLoaded] = React.useState(false)
+    // const [isVideoLoaded, setIsVideoLoaded] = React.useState(false)
     const [userState, setUserState] = React.useState("Login")
     const [errorMesage, setErrorMessage] = React.useState()
     const [showPassword, setShowPassword] = React.useState(false)
@@ -51,7 +51,7 @@ export default function HomePageForm(){
 
 
     const sendData = async () => {
-        const data = await fetch(`http://localhost:5000/api/v1/auth/${userState.toLowerCase()}`, {
+        const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/auth/${userState.toLowerCase()}`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -396,7 +396,7 @@ export default function HomePageForm(){
             </div>
             <div className="bottom-padding-hp-form">
                 <button className="hp-form-btn" onClick={handleSubmit}>{userState}</button>
-                <a className="login-with-google" href="http://localhost:5000/auth/google">
+                <a className="login-with-google" href="https://realestate-b6hy.onrender.com/auth/google">
                     <img src={GoogleICON} className="google-icon-img"></img>
                     Login with Google
                 </a>

@@ -11,7 +11,7 @@ export default function UserProfile() {
     const [ gottenProperties, setGottenProperties ] = React.useState(false)
     const logout = async () => {
       try {
-        await fetch("http://localhost:5000/auth/logout", {
+        await fetch("https://realestate-b6hy.onrender.com/auth/logout", {
           method: "GET",
           credentials: "include"
         })
@@ -28,7 +28,7 @@ export default function UserProfile() {
 
     React.useEffect(() => {
       const getUserInfo = async () => {
-        const res = await fetch("http://localhost:5000/auth/userInfo", {
+        const res = await fetch("https://realestate-b6hy.onrender.com/auth/userInfo", {
           method: "GET",
           credentials: "include"
         })
@@ -36,7 +36,7 @@ export default function UserProfile() {
         setUserInfo(data.user)
       }
       const getUserProperties = async() => {
-        const res = await fetch("http://localhost:5000/api/v1/properties/user", {
+        const res = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties/user", {
           method: "GET",
           credentials: "include"
         })

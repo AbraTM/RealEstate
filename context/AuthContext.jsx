@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     React.useEffect(() => {
         const checkAuth = async() => {
             try {
-                const res = await fetch("http://localhost:5000/auth/check", {
+                const res = await fetch("https://realestate-b6hy.onrender.com/auth/check", {
                     method: "GET",
                     credentials: "include"
                 })

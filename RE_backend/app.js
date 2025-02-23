@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser")
 const cors = require('cors');
 const passport = require('passport')
 const session = require('express-session')
+const MongoDBStore = require('connect-mongodb-session')(session)
 const User = require('./models/user')
 
 // Essential Middlwares
@@ -28,10 +29,19 @@ app.use(cors(corsOptions));
 // app.options('*', cors(corsOptions));
 
 // Session Configuration
+const store = new MongoDBStore({
+    uri : process.env.MONGO_URI,
+    collection : "sessions",
+    expires : 24 * 60 * 60 * 1000
+})
+store.on("error", (error) => {
+    console.log("Session Store Error: ", error)
+})
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,  
+    store: store,
     cookie: {
         httpOnly: true,
         secure: false,
@@ -66,7 +76,7 @@ app.use("/api/v1/auth", authRouter)
 // Googl Oauth
 app.get("/auth/google", passport.authenticate('google', { scope: ["email", "profile"]}))
 app.get("/auth/google/callback", passport.authenticate('google', {
-    successRedirect: "http://localhost:5173/user-profile",
+    successRedirect: process.env.NODE_ENV === "production" ? "https://real-estate-theta-neon.vercel.app/user-profile" : "http://localhost:5173/user-profile",
     failureRedirect: '/auth/failure'
 }))
 app.get("/googleProtected", (req, res) => res.send("<h1>Oauth success</h1>" + JSON.stringify(req.user)))
@@ -92,7 +102,7 @@ app.get("/auth/logout", (req, res) => {
     console.log("In Logout")
     res.clearCookie("access_token", {
         httpOnly: true,
-        secure: false,
+        secure: process.env.NODE_ENV === "production",
         sameSite: 'lax',
         path:'/'
     })

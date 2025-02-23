@@ -8,7 +8,7 @@ export default function Properties_Page() {
     const [propertiesData, setPropertiesData] = React.useState([]);
     React.useEffect(() => {
         const getData = async() => {
-          const data = await fetch("http://localhost:5000/api/v1/properties", {
+          const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties", {
             method: "GET",
             credentials: "include",
             headers: {
