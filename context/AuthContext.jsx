@@ -1,6 +1,8 @@
 import React from "react";
 import Loading from "../src/components/loading/loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 const AuthContext = React.createContext()
 export const useAuth = () => React.useContext(AuthContext)
 
@@ -12,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     React.useEffect(() => {
         const checkAuth = async() => {
             try {
-                const res = await fetch("https://realestate-b6hy.onrender.com/auth/check", {
+                const res = await fetch(`${API_BASE_URL}/auth/check`, {
                     method: "GET",
                     credentials: "include"
                 })

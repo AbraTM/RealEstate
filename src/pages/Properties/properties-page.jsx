@@ -4,11 +4,14 @@ import Default_House from '../../../public/default-house.jpg'
 import { Link } from 'react-router-dom';
 import Loading from '../../components/loading/loading';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function Properties_Page() {
     const [propertiesData, setPropertiesData] = React.useState([]);
     React.useEffect(() => {
         const getData = async() => {
-          const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties", {
+          const url = `${API_BASE_URL}/api/v1/properties`
+          const data = await fetch(`${API_BASE_URL}/api/v1/properties`, {
             method: "GET",
             credentials: "include",
             headers: {

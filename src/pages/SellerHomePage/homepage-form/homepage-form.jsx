@@ -5,6 +5,8 @@ import ShowIcon from "../assets/show.png"
 import HideIcon from "../assets/hide.png"
 import { useNavigate } from "react-router-dom";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function HomePageForm(){
     const navigate = useNavigate()
     // const [isVideoLoaded, setIsVideoLoaded] = React.useState(false)
@@ -51,7 +53,7 @@ export default function HomePageForm(){
 
 
     const sendData = async () => {
-        const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/auth/${userState.toLowerCase()}`, {
+        const data = await fetch(`${API_BASE_URL}/api/v1/auth/${userState.toLowerCase()}`, {
             method: "POST",
             credentials: "include",
             headers: {
@@ -396,7 +398,7 @@ export default function HomePageForm(){
             </div>
             <div className="bottom-padding-hp-form">
                 <button className="hp-form-btn" onClick={handleSubmit}>{userState}</button>
-                <a className="login-with-google" href="https://realestate-b6hy.onrender.com/auth/google">
+                <a className="login-with-google" href={`${API_BASE_URL}/auth/google`}>
                     <img src={GoogleICON} className="google-icon-img"></img>
                     Login with Google
                 </a>

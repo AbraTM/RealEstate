@@ -10,7 +10,6 @@ import { useMultiStepForm } from "../../../hooks/useMultiStepForm"
 import Overlay from "../../components/overlay/overlay";
 import { useAuth } from "../../../context/AuthContext";
 
-
 export default function ListPropertyPage(){
     const AuthContext = useAuth()
     const [formData, setFormData] = React.useState({

@@ -4,6 +4,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import Loading from '../../components/loading/loading';
 import Footer from "../../components/footer/footer"
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function UserProfile() {
     const navigate = useNavigate()
     const [ userInfo, setUserInfo ] = React.useState()
@@ -11,7 +13,7 @@ export default function UserProfile() {
     const [ gottenProperties, setGottenProperties ] = React.useState(false)
     const logout = async () => {
       try {
-        await fetch("https://realestate-b6hy.onrender.com/auth/logout", {
+        await fetch(`${API_BASE_URL}/auth/logout`, {
           method: "GET",
           credentials: "include"
         })
@@ -28,7 +30,7 @@ export default function UserProfile() {
 
     React.useEffect(() => {
       const getUserInfo = async () => {
-        const res = await fetch("https://realestate-b6hy.onrender.com/auth/userInfo", {
+        const res = await fetch(`${API_BASE_URL}/auth/userInfo`, {
           method: "GET",
           credentials: "include"
         })
@@ -36,7 +38,7 @@ export default function UserProfile() {
         setUserInfo(data.user)
       }
       const getUserProperties = async() => {
-        const res = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties/user", {
+        const res = await fetch(`${API_BASE_URL}/api/v1/properties/user`, {
           method: "GET",
           credentials: "include"
         })

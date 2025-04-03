@@ -13,13 +13,16 @@ import Footer from "../../components/footer/footer";
 import RightHalfBottom from "../PropertyPreview/assets/right-half-bottom.svg"
 import Loading from "../../components/loading/loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function Property(){
     const [data, setData] = React.useState()
     const [currImageIndex, changeCurrImageIndex] = React.useState(0)
     let { id } = useParams()
     React.useEffect(() => {
         const getData = async () =>{
-            const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/list-property-form/${id}`)
+            console.log("USED DATAA")
+            const data = await fetch(`${API_BASE_URL}/api/v1/list-property-form/${id}`)
             const res = await data.json()
             setData(res.propertyData[0])
         }

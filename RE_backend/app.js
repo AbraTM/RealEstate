@@ -69,7 +69,7 @@ const user = require('./models/user')
 
 //Routes
 app.get("/", (req, res) => res.send("<h1>Real Estate API</h1><a href='/auth/google'>Login with Google</a>"))
-app.use("/api/v1/list-property-form",authenticationMiddleware, listPropertyFormRouter)
+app.use("/api/v1/list-property-form", listPropertyFormRouter)
 app.use("/api/v1/properties", propertiesRouter)
 app.use("/api/v1/auth", authRouter)
 
@@ -99,7 +99,6 @@ app.get("/auth/userInfo", authenticationMiddleware, async(req, res) => {
     res.status(StatusCodes.OK).json({user: req.user})
 })
 app.get("/auth/logout", (req, res) => {
-    console.log("In Logout")
     res.clearCookie("access_token", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
@@ -112,7 +111,6 @@ app.get("/auth/logout", (req, res) => {
         }
         req.session.destroy(() => {
             res.clearCookie('connect.sid');
-            console.log("Cookies and session destroyed!!")
             res.json({msg: "Logged Out Successfully"})
         })
     })

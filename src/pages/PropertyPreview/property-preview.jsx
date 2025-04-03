@@ -13,6 +13,8 @@ import Footer from "../../components/footer/footer";
 import RightHalfBottom from "./assets/right-half-bottom.svg"
 import Loading from "../../components/loading/loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function PreopertyPreview(){
     const loc = useLocation()
     const propertyID = loc.state
@@ -22,7 +24,7 @@ export default function PreopertyPreview(){
 
     React.useEffect(() => {
         const getData = async () =>{
-            const data = await fetch(`https://realestate-b6hy.onrender.com/api/v1/list-property-form/${propertyID}`)
+            const data = await fetch(`${API_BASE_URL}/api/v1/list-property-form/${propertyID}`)
             const res = await data.json()
             setData(res.propertyData[0])
         }

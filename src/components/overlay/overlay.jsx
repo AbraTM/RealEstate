@@ -2,6 +2,8 @@ import React from "react";
 import "./overlay.css"
 import { useNavigate } from "react-router-dom";
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function Overlay(props){
     const [buttonText, setButtonText] = React.useState("Continue")
     const [errorMessage, setErrorMessage] = React.useState("")
@@ -19,11 +21,12 @@ export default function Overlay(props){
                         form.append(key, file)
                     })
                 }else if(formData[key]){
+                    
                     form.append(key, formData[key])
                 }
             })
             setButtonText("Saving...")
-            const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/list-property-form", {
+            const data = await fetch(`${API_BASE_URL}/api/v1/list-property-form`, {
                 method: "POST",
                 body: form,
                 mode: "cors",

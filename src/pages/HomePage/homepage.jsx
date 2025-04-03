@@ -9,11 +9,13 @@ import { Link } from "react-router-dom"
 import Loading from "../../components/loading/loading"
 import Footer from "../../components/footer/footer"
 
+const API_BASE_URL = import.meta.env.VITE_API_URL
+
 export default function Homepage() {
   const [propertiesData, setPropertiesData] = React.useState([])
   React.useEffect(() => {
     const getData = async () => {
-      const data = await fetch("https://realestate-b6hy.onrender.com/api/v1/properties")
+      const data = await fetch(`${API_BASE_URL}/api/v1/properties`)
       const res = await data.json()
       console.log(res)
       setPropertiesData(res.data)

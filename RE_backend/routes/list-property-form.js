@@ -2,8 +2,9 @@ const express = require("express")
 const router = express.Router()
 const { createPropertyDetails, getPropertyPreview } = require("../controllers/lpf-controller")
 const upload = require('../middleware/multer')
+const authenticationMiddleware = require("../middleware/authentication")
 
-router.post('/', 
+router.post('/', authenticationMiddleware,
     upload.fields([
         {
             name: "Cover_Image",
