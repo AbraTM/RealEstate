@@ -12,6 +12,7 @@ import Footer from "../../components/footer/footer"
 const API_BASE_URL = import.meta.env.VITE_API_URL
 
 export default function Homepage() {
+  console.log(API_BASE_URL)
   const [propertiesData, setPropertiesData] = React.useState([])
   React.useEffect(() => {
     const getData = async () => {
