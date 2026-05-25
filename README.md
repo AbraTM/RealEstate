@@ -1,15 +1,29 @@
-Real Estate App
+# RealEstate
 
-Let's user list their properties in a simple and quick way.
+Full-stack real estate listing application built with React, Express, and MongoDB, featuring multi-step property forms, Cloudinary image uploads, and React Context-based state management.
 
-Tech Used :
+## Features
 
---> Vite + ReactJS + React Router for Frontend --> NodeJS + ExpressJS for Backend --> MongoDB Database
+* Property listing and management
+* Multi-step form flow with persistent state handling
+* Image uploads using Cloudinary
+* Global state management using React Context and custom hooks
+* REST API integration with Express and MongoDB
+* Responsive frontend built with React and Vite
 
-Deployment :
+## Tech Stack
 
---> Webpage is deployed using Vercel. --> Backened(Server) is deployed using Render, first time submitting the data might take upto 50 seconds because of the free backend deployement restriction after that it should be fine.
+| Category   | Technologies              |
+| ---------- | ------------------------- |
+| Frontend   | React, Vite, React Router |
+| Backend    | Node.js, Express.js       |
+| Database   | MongoDB                   |
+| Services   | Cloudinary                |
+| Deployment | Vercel, Render            |
 
-Note :
+## Deployment
 
-Please keep in mind that the delay present while submitting the data for the first time is only there because of the free deployment restriction on Render becuase Render puts the server on sleep when not being used thus causing the delay, the first submission could take upto 50 seconds caused by the time taken for the server to start after that any other submission should work just fine and with adequate speed.
+* Frontend deployed on Vercel
+* Backend deployed on Render
+
+> Note: The backend is hosted on Render's free tier. The first request after inactivity may take some time while the server wakes up.
